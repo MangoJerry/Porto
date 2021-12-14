@@ -1,0 +1,141 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+
+{% block tovari %}
+    <div class="page-wrapper">
+        <main class="main">
+
+            <!-- путь -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                        CATEGORIES</li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav>
+            <!-- конец пути -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-xl-5col-4">
+                        <nav class="toolbox mb-4">
+                            <div class="toolbox-left">
+                                <div class="toolbox-item toolbox-sort">
+                                    <div class="select-custom">
+                                        <select name="orderby" class="form-control">
+                                            <option value="menu_order" selected="selected">Сортировка по умолчанию</option>
+                                            <option value="price">Цена (по возрастанию)</option>
+                                            <option value="price-desc">Цена (по убыванию)</option>
+                                        </select>
+                                    </div><!-- End .select-custom -->
+
+                                    <a href="#" class="sorter-btn" title="Set Ascending Direction"><span class="sr-only">Set Ascending Direction</span></a>
+                                </div><!-- End .toolbox-item -->
+                            </div><!-- End .toolbox-left -->
+
+                            <div class="toolbox-item toolbox-show">
+                                <label> 1–9 из 60 товаров</label>
+                            </div><!-- End .toolbox-item -->
+                            <!-- End .layout-modes -->
+                        </nav>
+<!-- Вывод товаров по категориям -->
+
+                        <div class="row row-sm">
+                            {% for pr in prods %}
+                            <div class="col-6 col-sm-12 product-default left-details product-list">
+                                <figure>
+                                    <a href="{% url 'prod' pr.pk %}">
+                                        <img src="{{pr.photo.url}}">
+                                    </a>
+                                </figure>
+                                <div class="product-details">
+                                    <div class="category-list">
+                                        <a href="category.html" class="product-category">{{pr.cat}}</a>,
+                                        <a href="category.html" class="product-category">{{pr.subcat}}</a>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="{% url 'prod' pr.pk %}">{{pr.title}}</a>
+                                    </h2>
+
+                                    <p class="product-description">{{pr.content}}</p>
+                                    <div class="price-box">
+                                        <span class="product-price">{{pr.price}} p.</span>
+                                    </div><!-- End .price-box -->
+                                    <div class="product-action">
+                                        <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-bag"></i>ADD TO CART</button>
+                                        <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
+                                        <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i class="fas fa-external-link-alt"></i></a>
+                                    </div>
+                                </div><!-- End .product-details -->
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+<!-- Конец товаров -->
+                        <nav class="toolbox toolbox-pagination">
+                            <div class="toolbox-item toolbox-show">
+                                <label> 1–9 из 60 товаров</label>
+                            </div><!-- End .toolbox-item -->
+
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-left"></i></a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1 <span class="sr-only">(Текущая)</span></a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><span>...</span></li>
+                                <li class="page-item"><a class="page-link" href="#">15</a></li>
+                                <li class="page-item">
+                                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div><!-- End .col-lg-9 -->
+
+                    <aside class="sidebar-shop col-lg-3 col-xl-5col-1 order-lg-first">
+                        <div class="sidebar-wrapper">
+
+                            <div class="widget">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true" aria-controls="widget-body-3">Цена</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-3">
+                                    <div class="widget-body">
+                                        <form action="#">
+                                            <div class="price-slider-wrapper">
+                                                <div id="price-slider"></div><!-- End #price-slider -->
+                                            </div><!-- End .price-slider-wrapper -->
+
+                                            <div class="filter-price-action">
+                                                <div class="filter-price-text">
+                                                    Цена:
+                                                    <span id="filter-price-range"></span>
+                                                </div><!-- End .filter-price-text -->
+                                                <button type="submit" class="btn btn-primary">Фильтр</button>
+                                            </div><!-- End .filter-price-action -->
+                                        </form>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+
+                        </div><!-- End .sidebar-wrapper -->
+                    </aside><!-- End .col-lg-3 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+
+            <div class="mb-6"></div>
+        </main><!-- End .main -->
+    </div>
+{% endblock tovari %}
+

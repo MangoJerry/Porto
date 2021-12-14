@@ -1,0 +1,516 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Интернет магазин - Porto</title>
+
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - online-store">
+    <meta name="author" content="SW-THEMES">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'main/images/icons/favicon.ico' %}">
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Open+Sans:300,400,600,700,800','Poppins:300,400,500,600,700' ] }
+        };
+        (function(d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = "{% static 'main/js/webfont.js' %};
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'main/css/style.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/vendor/fontawesome-free/css/all.min.css' %}">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header-top">
+                <a href="#">
+                    <h3>Интернет магазин цифровой техники</h3>
+                </a>
+            </div><!-- End .header-top -->
+
+            <div class="header-middle">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler" type="button">
+                            <i class="icon-menu"></i>
+                        </button>
+                        <a href="{% url 'index' %}" class="logo">
+                            <img src="{% static 'main/images/logo.png' %}" alt='Porto Logo'>
+                        </a>
+                    </div><!-- End .header-left -->
+    <!-- Форма поиска -->
+                    <div class="header-center">
+                        <div class="header-search">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper">
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="Поиск по сайту" required>
+                                    <button class="btn" type="submit"><i class="icon-magnifier"></i></button>
+                                </div><!-- End .header-search-wrapper -->
+                            </form>
+                        </div><!-- End .header-search -->
+                    </div> <!-- End .headeer-center -->
+
+                    <div class="header-right">
+                        <a href="login.html">
+                            <div class="header-user">
+                                <i class="icon-user-2"></i>
+                                <div class="header-userinfo">
+                                    <span>Hello!</span>
+
+                                </div>
+                            </div>
+                        </a>
+                            <!-- кнопка корзина -->
+
+                        <a href="#" class="porto-icon"><i class="icon icon-heart"></i></a>
+                        <div class="dropdown cart-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <i class="minicart-icon"></i>
+                                <span class="cart-count">8</span> <!--индикатор на корзине-->
+                            </a>
+                            <div class="dropdown-menu" >
+                                <div class="dropdownmenu-wrapper">
+                                    <div class="dropdown-cart-header">
+                                        <span>Количесвто товаров</span>
+                                        <!-- корзина -->
+                                        <!-- ------------------------------------------- -->
+                                        <a href="cart.html">View Cart</a>
+                                    </div><!-- End .dropdown-cart-header -->
+                                 <div class="dropdown-cart-products">
+                                        <div class="product">
+                                            <div class="product-details">
+                                                <h4 class="product-title">
+                                                    <!-- описание товара -->
+                                                    <a href="product.html">Woman Ring</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+                                                    <span class="cart-product-qty">1</span>
+                                                    x $99.00
+                                                </span>
+                                            </div><!-- End .product-details -->
+
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="{% static 'main/images/products/cart/product-1.jpg' %}" alt='product'>
+                                                </a>
+                                                <a href="#" class="btn-remove" title="Remove Product"><i class="icon-retweet"></i></a>
+                                            </figure>
+                                        </div><!-- End .product -->
+
+                                        <div class="product">
+                                            <div class="product-details">
+                                                <h4 class="product-title">
+                                                    <a href="product.html">Woman Necklace</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+                                                    <span class="cart-product-qty">1</span>
+                                                    x $35.00
+                                                </span>
+                                            </div><!-- End .product-details -->
+
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="{% static 'main/images/products/cart/product-2.jpg' %}" alt="product">
+                                                </a>
+                                                <a href="#" class="btn-remove" title="Remove Product"><i class="icon-retweet"></i></a>
+                                            </figure>
+                                        </div><!-- End .product -->
+                                    </div><!-- End .cart-product -->
+                                    <div class="dropdown-cart-total">
+                                        <span>Total</span>
+
+                                        <span class="cart-total-price">$134.00</span>
+                                    </div><!-- End .dropdown-cart-total -->
+
+                                    <div class="dropdown-cart-action">
+                                        <a href="checkout-shipping.html" class="btn btn-block">Checkout</a>
+                                    </div><!-- End .dropdown-cart-total -->
+                                </div><!-- End .dropdownmenu-wrapper -->
+                            </div><!-- End .dropdown-menu -->
+                        </div><!-- End .dropdown -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div><!-- End .header-middle -->
+            <div class="header-bottom">
+                <div class="container">
+                    <nav class="main-nav">
+                        <div class="menu-depart">
+                            <a href="#"><i class="icon-menu"></i>Категории</a>
+                            <div class="submenu">
+
+                                {% for c in cats %}
+                                    <a href="{{c.get_absolute_url}}">{{c.name}}</a>
+                                    {% for s in subcats %}
+                                    {% if s.cat_id == c.pk %}
+                                        <a href="{{s.get_absolute_url}}"> - {{s.name}}</a>
+                                    {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                                <a href="{% url 'all' %}">Все категории</a>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div><!-- End .header-bottom -->
+            </div>
+        </header><!-- End .header -->
+        <main class="main home">
+            <div class="container">
+                {% block slider %}
+                {% endblock slider %}
+
+                {% block tovari %}
+                {% endblock tovari %}
+
+                {% block product %}
+                {% endblock product %}
+
+                <section class="product-panel">
+                    <div class="section-title">
+                        <h2>Популярные товары</h2>
+                    </div>
+
+                   <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                        'margin': 0,
+                        'items': 6,
+                        'autoplayTimeout': 5000,
+                        'dots': true,
+                        'nav': true,
+                        'responsive': {
+                            '576': {
+                                'items': 3
+                            },
+                            '992': {
+                                'items': 4
+                            },
+                            '1200': {
+                                'items' : 5
+                            }
+                        }
+                    }">
+                       {% for p in products %}
+                       <div class="product-default inner-quickview inner-icon">
+
+                            <figure>
+                                <a href="#">
+                                    {% if p.photo %}
+                                    <img src="{{p.photo.url}}">
+                                    {% else %}
+                                    <img src="{% static 'main/images/products/no_photo.png' %}">
+                                    {% endif %}
+                                </a>
+                                <div class="label-group">
+                                    <span class="product-label label-cut">{{p.sale}}% скидка</span>
+                                </div>
+                                <div class="btn-icon-group">
+                                    <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-bag"></i></button>
+                                </div>
+                                <a href="{% static 'main/ajax/product-quick-view.html' %}" class="btn-quickview" title="Quick View">Быстрый просмотр</a>
+                            </figure>
+                            <div class="product-details">
+                                <div class="category-wrap">
+                                    <div class="category-list">
+                                        <a href="#" class="product-category">{{p.cat}}</a>
+                                    </div>
+                                    <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
+                                </div>
+                                <h2 class="product-title">
+                                    <a href="#">{{p.title}}</a>
+                                </h2>
+
+                                <div class="price-box">
+                                    <span class="old-price">{{p.price}} р.</span>
+                                </div><!-- End .price-box -->
+                            </div><!-- End .product-details -->
+
+                        </div>
+                       {% endfor %}
+                    </div>
+                </section>
+            </div>
+            <section class="container mt-3 mb-7" id="topBrands">
+                <div class="section-title mb-6">
+
+                    <h2>Брэнды</h2>
+                </div>
+                <div class="partners-carousel owl-carousel owl-theme text-center" data-toggle="owl" data-owl-options="{
+                    'loop' : true,
+                    'nav': false,
+                    'dots': true,
+                    'autoHeight': true,
+                    'autoplay': true,
+                    'autoplayTimeout': 5000,
+                    'responsive': {
+                      '0': {
+                        'items': 2,
+                        'margin': 0
+                      },
+                      '480': {
+                        'items': 3
+                      },
+                      '768': {
+                        'items': 4
+                      },
+                      '992': {
+                        'items': 5
+                      }
+                    }
+                }">
+                    <img src="{% static 'main/images/logos/1.png' %}" alt="logo">
+                    <img src="{% static 'main/images/logos/2.png' %}" alt="logo">
+                    <img src="{% static 'main/images/logos/3.png' %}" alt="logo">
+                    <img src="{% static 'main/images/logos/4.png' %}" alt="logo">
+                    <img src="{% static 'main/images/logos/5.png' %}" alt="logo">
+                </div>
+            </section>
+        </main><!-- End .main -->
+
+        <footer class="footer">
+
+            <div class="container">
+                <div class="footer-middle">
+                    <div class="row row-sm">
+                        <div class="col-lg-6 col-xl-4">
+                            <a href="index.html">
+                                <img src="{% static 'main/images/logo-black.png" alt="Porto Logo">
+                            </a>
+                            <div class="row row-sm">
+                                <div class="col-sm-6">
+                                    <div class="contact-widget">
+                                        <h4 class="widget-title">ADDRESS</h4>
+                                        <a href="#">123 Street Name, City, England</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="contact-widget email">
+                                        <h4 class="widget-title">EMAIL</h4>
+                                        <a href="mailto:mail@example.com">mail@example.com</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="contact-widget">
+                                        <h4 class="widget-title">PHONE</h4>
+                                        <a href="#">Toll Free (123) 456-7890</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="contact-widget">
+                                        <h4 class="widget-title">WORKING DAYS/HOURS</h4>
+                                        <a href="#">Mon - Sun / 9:00AM - 8:00PM</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="social-icons mb-3">
+                                        <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div><!-- End .social-icons -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-2 col-xl-3">
+                            <div class="widget">
+                                <h4 class="widget-title">Account</h4>
+                                <ul class="links link-parts">
+                                    <div class="link-part">
+                                        <li><a href="my-account.html">My Account</a></li>
+                                        <li><a href="#">Track Your Order</a></li>
+                                        <li><a href="#">Payment Methods</a></li>
+                                        <li><a href="#">Shipping Guide</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Product Support</a></li>
+                                        <li><a href="#">Privacy</a></li>
+                                    </div>
+                                    <div class="link-part">
+                                        <li><a href="my-account.html">Orders History</a></li>
+                                        <li><a href="#">Advanced Search</a></li>
+                                        <li><a href="#">Affiliate Program</a></li>
+                                    </div>
+                                </ul>
+                            </div><!-- End .widget -->
+                        </div>
+                        <div class="col-md-4 col-lg-2 col-xl-3">
+                            <div class="widget">
+                                <h4 class="widget-title">About</h4>
+                                <ul class="links">
+                                    <li><a href="about.html">About Porto</a></li>
+                                    <li><a href="#">Our Guarantees</a></li>
+                                    <li><a href="#">Terms And Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Intellectual Property Claims</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                </ul>
+                            </div><!-- End .widget -->
+                        </div>
+                        <div class="col-md-4 col-lg-2 col-xl-2">
+                            <div class="widget">
+                                <h4 class="widget-title">Features</h4>
+                                <ul class="links">
+                                    <li><a href="#">Powerful Admin Panel</a></li>
+                                    <li><a href="#">Mobile & Retina Optimized</a></li>
+                                    <li><a href="#">Super Fast Magento Theme</a></li>
+                                    <li><a href="#">1st Fully working Ajax Theme</a></li>
+                                    <li><a href="#">10 Unique Homepage Layouts</a></li>
+                                </ul>
+                            </div><!-- End .widget -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">Porto eCommerce. &copy;  2020.  All Rights Reserved</p>
+                    <img src="assets/images/payments_long.png" width="180px" style="max-height: 24px">
+                </div>
+            </div>
+        </footer><!-- End .footer -->
+    </div><!-- End .page-wrapper -->
+
+    <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+
+    <div class="mobile-menu-container">
+        <div class="mobile-menu-wrapper">
+            <span class="mobile-menu-close"><i class="icon-retweet"></i></span>
+            <nav class="mobile-nav">
+                <ul class="mobile-menu">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="category.html">Categories</a>
+                        <ul>
+                            <li><a href="category.html">Full Width Banner</a></li>
+                            <li><a href="category-banner-boxed-slider.html">Boxed Slider Banner</a></li>
+                            <li><a href="category-banner-boxed-image.html">Boxed Image Banner</a></li>
+                            <li><a href="category.html">Left Sidebar</a></li>
+                            <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
+                            <li><a href="category-flex-grid.html">Product Flex Grid</a></li>
+                            <li><a href="category-horizontal-filter1.html">Horizontal Filter 1</a></li>
+                            <li><a href="category-horizontal-filter2.html">Horizontal Filter 2</a></li>
+                            <li><a href="#">Product List Item Types</a></li>
+                            <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll<span class="tip tip-new">New</span></a></li>
+                            <li><a href="category-3col.html">3 Columns Products</a></li>
+                            <li><a href="category.html">4 Columns Products</a></li>
+                            <li><a href="category-5col.html">5 Columns Products</a></li>
+                            <li><a href="category-6col.html">6 Columns Products</a></li>
+                            <li><a href="category-7col.html">7 Columns Products</a></li>
+                            <li><a href="category-8col.html">8 Columns Products</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="product.html">Products</a>
+                        <ul>
+                            <li>
+                                <a href="#">Variations</a>
+                                <ul>
+                                    <li><a href="product.html">Horizontal Thumbnails</a></li>
+                                    <li><a href="product-full-width.html">Vertical Thumbnails<span class="tip tip-hot">Hot!</span></a></li>
+                                    <li><a href="product.html">Inner Zoom</a></li>
+                                    <li><a href="product-addcart-sticky.html">Addtocart Sticky</a></li>
+                                    <li><a href="product-sidebar-left.html">Accordion Tabs</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Variations</a>
+                                <ul>
+                                    <li><a href="product-sticky-tab.html">Sticky Tabs</a></li>
+                                    <li><a href="product-simple.html">Simple Product</a></li>
+                                    <li><a href="product-sidebar-left.html">With Left Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Product Layout Types</a>
+                                <ul>
+                                    <li><a href="product.html">Default Layout</a></li>
+                                    <li><a href="product-extended-layout.html">Extended Layout</a></li>
+                                    <li><a href="product-full-width.html">Full Width Layout</a></li>
+                                    <li><a href="product-grid-layout.html">Grid Images Layout</a></li>
+                                    <li><a href="product-sticky-both.html">Sticky Both Side Info<span class="tip tip-hot">Hot!</span></a></li>
+                                    <li><a href="product-sticky-info.html">Sticky Right Side Info</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Pages<span class="tip tip-hot">Hot!</span></a>
+                        <ul>
+                            <li><a href="cart.html">Shopping Cart</a></li>
+                            <li>
+                                <a href="#">Checkout</a>
+                                <ul>
+                                    <li><a href="checkout-shipping.html">Checkout Shipping</a></li>
+                                    <li><a href="checkout-shipping-2.html">Checkout Shipping 2</a></li>
+                                    <li><a href="checkout-review.html">Checkout Review</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#" class="login-link">Login</a></li>
+                            <li><a href="forgot-password.html">Forgot Password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a>
+                        <ul>
+                            <li><a href="single.html">Blog Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Special Offer!<span class="tip tip-hot">Hot!</span></a></li>
+
+                </ul>
+            </nav><!-- End .mobile-nav -->
+
+            <div class="social-icons">
+                <a href="#" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
+            </div><!-- End .social-icons -->
+        </div><!-- End .mobile-menu-wrapper -->
+    </div><!-- End .mobile-menu-container -->
+
+
+    <!-- Add Cart Modal -->
+    <div class="modal fade" id="addCartModal" tabindex="-1" role="dialog" aria-labelledby="addCartModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body add-cart-box text-center">
+            <p>You've just added this product to the<br>cart:</p>
+            <h4 id="productTitle"></h4>
+            <img src="" id="productImage" width="100" height="100" alt="adding cart image">
+            <div class="btn-actions">
+                <a href="cart.html"><button class="btn-primary">Go to cart page</button></a>
+                <a href="#"><button class="btn-primary" data-dismiss="modal">Continue</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+
+    <!-- Plugins JS File -->
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'main/js/plugins.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.countdown/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'main/js/plugins/isotope-docs.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'main/js/main_init.min.js' %}"></script>
+    <script src="{% static 'main/js/main.min.js' %}"></script>
+</body>
+</html>
