@@ -2,7 +2,6 @@
 
 {% load static %}
 
-
 {% block tovari %}
     <div class="page-wrapper">
         <main class="main">
@@ -13,7 +12,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                        CATEGORIES</li>
+                        ALL CATEGORIES</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
@@ -45,7 +44,7 @@
 <!-- Вывод товаров по категориям -->
 
                         <div class="row row-sm">
-                            {% for pr in prods %}
+                            {% for pr in products %}
                             <div class="col-6 col-sm-12 product-default left-details product-list">
                                 <figure>
                                     <a href="{% url 'prod' pr.pk %}">
@@ -58,7 +57,7 @@
                                         <a href="category.html" class="product-category">{{pr.subcat}}</a>
                                     </div>
                                     <h2 class="product-title">
-                                        <a href="{% url 'prod' pr.pk %}">{{pr.title}}</a>
+                                        <a href="#">{{pr.title}}</a>
                                     </h2>
 
                                     <p class="product-description">{{pr.content}}</p>
@@ -66,9 +65,9 @@
                                         <span class="product-price">{{pr.price}} p.</span>
                                     </div><!-- End .price-box -->
                                     <div class="product-action">
-                                        <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-bag"></i>Добаить в корзину</button>
+                                        <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-bag"></i>Добавить в корзину</button>
                                         <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
-
+                                        <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i class="fas fa-external-link-alt"></i></a>
                                     </div>
                                 </div><!-- End .product-details -->
                             </div>

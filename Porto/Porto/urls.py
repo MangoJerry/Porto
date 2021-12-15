@@ -22,6 +22,7 @@ from Porto import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('login/', include('login.urls'))
 ]
 
 if settings.DEBUG:

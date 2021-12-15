@@ -29,4 +29,4 @@ def show_product(request, prod_id):
 
 def show_all(request):
     products = Products.objects.all()
-    return render(request, 'main/category.html', {'products': products})
+    return render(request, 'main/all_categories.html', {'products': products})
